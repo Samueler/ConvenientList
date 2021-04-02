@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wxg-5T-HFE">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +18,53 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dd-gK-EPM">
+                                <rect key="frame" x="145.5" y="124" width="84" height="30"/>
+                                <state key="normal" title="UITableView"/>
+                                <connections>
+                                    <action selector="tableViewAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HNL-iW-AED"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi4-qf-kV2">
+                                <rect key="frame" x="129.5" y="214" width="116" height="30"/>
+                                <state key="normal" title="UICollectionView"/>
+                                <connections>
+                                    <action selector="collectionViewAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cpy-Eg-wWG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xi4-qf-kV2" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Guj-Va-Lci"/>
+                            <constraint firstItem="1Dd-gK-EPM" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="J28-VX-Wnb"/>
+                            <constraint firstItem="1Dd-gK-EPM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="Sqm-vR-ZOO"/>
+                            <constraint firstItem="Xi4-qf-kV2" firstAttribute="top" secondItem="1Dd-gK-EPM" secondAttribute="bottom" constant="60" id="ySX-Kp-jOr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NjX-Zc-c4T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1016.8" y="115.59220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hna-Rx-VjF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wxg-5T-HFE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GpL-gm-3eN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="j0Q-pw-QBP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56Y-JT-dkO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77.599999999999994" y="115.59220389805098"/>
         </scene>
     </scenes>
 </document>
