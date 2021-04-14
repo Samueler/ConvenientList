@@ -20,6 +20,7 @@
 		C1B6D20D261773990031E6D3 /* TableViewHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B6D20C261773990031E6D3 /* TableViewHeaderFooter.swift */; };
 		C1B6D211261773C40031E6D3 /* CollectionHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B6D210261773C40031E6D3 /* CollectionHeaderFooterView.swift */; };
 		C1B6D215261773D80031E6D3 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B6D214261773D80031E6D3 /* TestCollectionViewCell.swift */; };
+		C1B6D2E82627233C0031E6D3 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B6D2E72627233C0031E6D3 /* UIResponder.swift */; };
 		E36515EE1528AA7C830C8C24 /* libPods-ConvenientList_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18805243F08936E73DC46D33 /* libPods-ConvenientList_Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		C1B6D20C261773990031E6D3 /* TableViewHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderFooter.swift; sourceTree = "<group>"; };
 		C1B6D210261773C40031E6D3 /* CollectionHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderFooterView.swift; sourceTree = "<group>"; };
 		C1B6D214261773D80031E6D3 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1B6D2E72627233C0031E6D3 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		CF4D6B92C817DB06141CCBAB /* Pods-ConvenientList_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvenientList_Example.release.xcconfig"; path = "Target Support Files/Pods-ConvenientList_Example/Pods-ConvenientList_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D03364D5C27B33536026934A /* libPods-ConvenientList_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConvenientList_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58B8115CCBC18C45B6C7986 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -118,16 +120,13 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				C1B6D2DD26271FDC0031E6D3 /* TableView */,
+				C1B6D2DE26271FE00031E6D3 /* CollectionView */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				C1B6D200261773350031E6D3 /* TableViewController.swift */,
-				C1B6D204261773400031E6D3 /* CollectionViewController.swift */,
-				C1B6D208261773740031E6D3 /* TestCell.swift */,
-				C1B6D20C261773990031E6D3 /* TableViewHeaderFooter.swift */,
-				C1B6D210261773C40031E6D3 /* CollectionHeaderFooterView.swift */,
-				C1B6D214261773D80031E6D3 /* TestCollectionViewCell.swift */,
+				C1B6D2E72627233C0031E6D3 /* UIResponder.swift */,
 			);
 			name = "Example for ConvenientList";
 			path = ConvenientList;
@@ -175,6 +174,26 @@
 				18805243F08936E73DC46D33 /* libPods-ConvenientList_Tests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1B6D2DD26271FDC0031E6D3 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				C1B6D200261773350031E6D3 /* TableViewController.swift */,
+				C1B6D208261773740031E6D3 /* TestCell.swift */,
+				C1B6D20C261773990031E6D3 /* TableViewHeaderFooter.swift */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		C1B6D2DE26271FE00031E6D3 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C1B6D204261773400031E6D3 /* CollectionViewController.swift */,
+				C1B6D210261773C40031E6D3 /* CollectionHeaderFooterView.swift */,
+				C1B6D214261773D80031E6D3 /* TestCollectionViewCell.swift */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +356,7 @@
 				C1B6D201261773350031E6D3 /* TableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C1B6D215261773D80031E6D3 /* TestCollectionViewCell.swift in Sources */,
+				C1B6D2E82627233C0031E6D3 /* UIResponder.swift in Sources */,
 				C1B6D20D261773990031E6D3 /* TableViewHeaderFooter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,7 +57,8 @@ open class TableViewData: ListDataClass<TableViewSection, TableViewRow> {
 }
 
 extension TableViewData: ListDataCRUDProtocol {
-    @discardableResult public func create(sectionData listSection: ListSection?, section: Int) -> Bool {
+    
+    @discardableResult public func add(listSection: TableViewSection?, at section: Int) -> Bool {
         guard let listSection = listSection,
               let sections = listSections,
               sections.count >= section
@@ -66,7 +67,7 @@ extension TableViewData: ListDataCRUDProtocol {
         return true
     }
     
-    @discardableResult public func create(rowData listRow: ListRow?, at indexPath: IndexPath) -> Bool {
+    @discardableResult public func add(listRow: TableViewRow?, for indexPath: IndexPath) -> Bool {
         guard let listRow = listRow,
               let sections = listSections,
               let rows = sections[indexPath.section].listRows,
@@ -78,17 +79,17 @@ extension TableViewData: ListDataCRUDProtocol {
         return true
     }
     
-    @discardableResult public func read(at section: Int) -> ListSection? {
+    @discardableResult public func read(listSection atSection: Int) -> TableViewSection? {
         guard let sections = listSections else { return nil }
-        return sections[safe: section]
+        return sections[safe: atSection]
     }
     
-    @discardableResult public func read(rowData indexPath: IndexPath) -> ListRow? {
+    @discardableResult public func read(listRow forIndexPath: IndexPath) -> TableViewRow? {
         guard let sections = listSections else { return nil }
-        return sections[safe: indexPath.section]?.listRows?[safe: indexPath.row]
+        return sections[safe: forIndexPath.section]?.listRows?[safe: forIndexPath.row]
     }
     
-    @discardableResult public func update(sectionData listSection: ListSection?, at section: Int) -> Bool {
+    @discardableResult public func update(listSection: TableViewSection?, at section: Int) -> Bool {
         guard let sections = listSections,
               let listSection = listSection,
               sections.count > section
@@ -98,7 +99,7 @@ extension TableViewData: ListDataCRUDProtocol {
         return true
     }
     
-    @discardableResult public func update(rowData listRow: ListRow?, at indexPath: IndexPath) -> Bool {
+    @discardableResult public func update(listRow: TableViewRow?, for indexPath: IndexPath) -> Bool {
         guard let sections = listSections,
               let listRow = listRow,
               let rows = sections[indexPath.section].listRows,
@@ -109,19 +110,20 @@ extension TableViewData: ListDataCRUDProtocol {
         return true
     }
     
-    @discardableResult public func delete(at section: Int) -> Bool {
+    @discardableResult public func delete(listSection atSection: Int) -> Bool {
         guard let sections = listSections,
-              sections.count > section else { return false }
-        listSections?.remove(at: section)
+              sections.count > atSection else { return false }
+        listSections?.remove(at: atSection)
         return true
     }
     
-    @discardableResult public func delete(rowData indexPath: IndexPath) -> Bool {
+    @discardableResult public func delete(listRow forIndexPath: IndexPath) -> Bool {
         guard let sections = listSections,
-              let rows = sections[indexPath.section].listRows,
-              rows.count > indexPath.row
+              let rows = sections[forIndexPath.section].listRows,
+              rows.count > forIndexPath.row
         else { return false }
-        listSections?[indexPath.section].listRows?.remove(at: indexPath.row)
+        listSections?[forIndexPath.section].listRows?.remove(at: forIndexPath.row)
         return true
     }
+
 }

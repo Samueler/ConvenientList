@@ -39,14 +39,14 @@ public protocol ListDataCRUDProtocol {
     associatedtype ListSection: ListSectionDataProtocol
     associatedtype ListRow: ListRowDataProtocol
     
-    @discardableResult func create(sectionData listSection: ListSection?, section: Int) -> Bool
-    @discardableResult func create(rowData listRow: ListRow?, at indexPath: IndexPath) -> Bool
-    @discardableResult func read(at section: Int) -> ListSection?
-    @discardableResult func read(rowData indexPath: IndexPath) -> ListRow?
-    @discardableResult func update(sectionData listSection: ListSection?, at section: Int) -> Bool
-    @discardableResult func update(rowData listRow: ListRow?, at indexPath: IndexPath) -> Bool
-    @discardableResult func delete(at section: Int) -> Bool
-    @discardableResult func delete(rowData indexPath: IndexPath) -> Bool
+    @discardableResult func add(listSection: ListSection?, at section: Int) -> Bool
+    @discardableResult func add(listRow: ListRow?, for indexPath: IndexPath) -> Bool
+    @discardableResult func read(listSection atSection: Int) -> ListSection?
+    @discardableResult func read(listRow forIndexPath: IndexPath) -> ListRow?
+    @discardableResult func update(listSection: ListSection?, at section: Int) -> Bool
+    @discardableResult func update(listRow: ListRow?, for indexPath: IndexPath) -> Bool
+    @discardableResult func delete(listSection atSection: Int) -> Bool
+    @discardableResult func delete(listRow forIndexPath: IndexPath) -> Bool
 }
 
 open class ListDataClass<ListSection: ListSectionDataProtocol, ListRow: ListRowDataProtocol>: NSObject, ListDataClassProtocol {

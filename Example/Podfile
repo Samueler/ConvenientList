@@ -2,10 +2,11 @@ platform :ios, '10.0'
 
 target 'ConvenientList_Example' do
   pod 'ConvenientList', :path => '../'
+  
+  pod 'SnapKit'
 
   target 'ConvenientList_Tests' do
     inherit! :search_paths
-
     
   end
 end
